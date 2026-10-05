@@ -5,6 +5,17 @@
 <p align="center"><b>Run a 125-billion-parameter AI model on your own gaming PC</b><br>
 NVIDIA or AMD graphics card (12 GB or more) · Windows or Linux · free and open source</p>
 
+> ### This fork: a Tesla V100 (sm_70) community benchmark
+>
+> Measured on a **V100-SXM2-32GB** under Windows 11 with CUDA 12.6 / MSVC, using the experimental
+> Volta build (`-DSTRATA_EXPERIMENTAL_SM60=ON`): the official GSQ-RCO **Q2_0** and **IQ2_XS**
+> compared against Unsloth **UD-IQ4_XS** (the 2-bit files decode **~3x faster**), a five-question
+> correctness battery, and the PCIe x4-against-x16 effect (**3.8x** on prompt speed).
+>
+> **→ [bench/results/2026-10-05-community-v100-sxm2](bench/results/2026-10-05-community-v100-sxm2/README.md)**
+>
+> The Volta build itself is upstream; it is documented in [docs/NVIDIA_V100.md](docs/NVIDIA_V100.md).
+
 <p align="center"><a href="https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4"><img src="docs/media/pagoda-preview.webp" width="720" alt="A voxel pagoda garden that Strata's model wrote, running in the browser"></a><br>
 <sub>A voxel pagoda garden, 1 shot prompt running on an RTX 5070 with Strata (IQ3_S, 128K context) ·
 <a href="https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4">full video (49 s)</a></sub></p>
