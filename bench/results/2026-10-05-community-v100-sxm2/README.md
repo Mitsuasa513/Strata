@@ -93,11 +93,14 @@ The same machine, the same 30,000-token prompt, the same model, two different PC
 | Link | engine's probe | prefill tok/s | time to first token |
 | --- | ---: | ---: | ---: |
 | Gen3 **x4** | 3.3 GB/s (`pcie_frac 0.00`) | 179 | 168 s |
-| Gen3 **x16** | 13.1 GB/s (`pcie_frac 0.36`) | **682** | **45 s** |
+| Gen3 **x16** | 13.1 GB/s (`pcie_frac 0.28`) | **682** | **45 s** |
 
 **3.8x** from the slot alone. The engine adapts: at 3.3 GB/s it decides to keep every expert on the
 CPU, at 13.1 GB/s it offloads a third. If a V100 looks far slower than these numbers, check
 `nvidia-smi --query-gpu=pcie.link.width.current` before changing anything else.
+
+(These two runs are from an earlier build of the engine on the same machine - the rest of this
+report is from `6f32ec0`. The link was the only thing that changed between them.)
 
 ## Correctness on a reasoning battery
 

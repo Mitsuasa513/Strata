@@ -36,7 +36,7 @@
   "pcie_link_effect": {
     "_note": "same 30 000-token prompt, same model, only the slot changed",
     "gen3_x4":  {"probe_gb_s": 3.3, "pcie_frac": 0.00, "prefill_tok_s": 179, "ttft_s": 168.4},
-    "gen3_x16": {"probe_gb_s": 13.1, "pcie_frac": 0.36, "prefill_tok_s": 682, "ttft_s": 45.7}
+    "gen3_x16": {"probe_gb_s": 13.1, "pcie_frac": 0.28, "prefill_tok_s": 682, "ttft_s": 45.7}
   },
   "quality_battery_5_prompts": {
     "_note": "greedy, 1024-token cap, through the resident server; answers checked by hand",
