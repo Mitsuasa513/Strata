@@ -26,6 +26,9 @@ and their limits. Report what you actually measured and label estimates separate
 - [2026-10-07: 2x NVIDIA Quadro RTX 4000 8 GB, Xeon E5-2620 v3, 96 GB RAM](../bench/results/2026-10-07-community-2x-rtx-4000/README.md):
   Strata 0.1.38, Swift-Qwen3.8-Flash-Next IQ2_XS, 131,072-token context, layer split across dual GPUs with RAM-tiered expert cache;
   measured deep-context prompt ingestion (73k–74k tokens at 100–250 tok/s, 18–23 tok/s decode) and production pipeline comparison against a 12B model.
+- [2026-10-09: AMD Radeon Pro VII 16 GB (gfx906), Xeon E5-2666 v3, 125.7 GiB RAM](../bench/results/2026-10-09-community-radeon-pro-vii-16gb/README.md):
+  Strata 0.1.40.4 and 0.1.41 source builds for gfx906 with the distribution's own ROCm 6.2 (four host patches documented in BUILD.json), original Flash-Next IQ2_XS, 131,072-token context with KV streaming on a 16 GB card;
+  three runs each at 4,096, 32,768 and 128,000 prompt tokens, twice (the second sweep carries per-second GPU telemetry). Decode 24.2/24.0/23.7 tok/s, prompt 350/339/284 tok/s on 0.1.40.4; needles 6/6 at 32k and 128k; the 0.1.41 round did not reproduce issue #1691 under these conditions.
 
 ## What to record
 
